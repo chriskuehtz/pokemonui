@@ -1,0 +1,23 @@
+//colors
+$background-color: black;
+$main-color: white;
+$accent-color: gray;
+//font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+$font-family: "Montserrat", sans-serif;
+$thin: 200;
+$medium: 400;
+$thick: 600;
+
+//font-weights
+.thin {
+  font-weight: $thin;
+}
+.bold {
+  font-weight: $thick;
+}
+
+//breakpoints
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;

@@ -1,0 +1,12 @@
+.moves-container {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

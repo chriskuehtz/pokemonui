@@ -1,0 +1,17 @@
+.card-stack {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+
+  @media (min-width: $tablet) {
+    margin: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: $laptop) {
+    margin: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
