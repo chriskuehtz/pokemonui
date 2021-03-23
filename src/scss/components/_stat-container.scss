@@ -1,0 +1,12 @@
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

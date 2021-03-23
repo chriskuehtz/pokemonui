@@ -5,9 +5,11 @@
 //reusable components
 @import "./reusables/card";
 @import "./reusables/card-stack";
+@import "./reusables/progress-segment";
 //unique components
 @import "./components/moves-container";
 @import "./components/head-container";
+@import "./components/stat-container";
 
 body {
   margin: 0;
@@ -21,7 +23,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   padding: 0;
   margin: 0;
 }

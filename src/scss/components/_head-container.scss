@@ -1,7 +1,26 @@
 .head-container {
   margin-top: 0.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   align-items: flex-start;
   justify-content: start;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    height: 5rem;
+    width: 5rem;
+
+    @media (min-width: $tablet) {
+      justify-self: center;
+      height: 10rem;
+      width: 10rem;
+    }
+    @media (min-width: $laptop) {
+      height: 15rem;
+      width: 15rem;
+    }
+  }
 }

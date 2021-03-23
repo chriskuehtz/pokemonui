@@ -1,0 +1,12 @@
+.progress-segment {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+.progress-segment-reverse {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 0.5rem;
+  align-items: center;
+}

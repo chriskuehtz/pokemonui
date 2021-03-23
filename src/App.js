@@ -4,6 +4,8 @@ import "./scss/main.css";
 
 import MovesContainer from "./components/MovesContainer";
 import HeadContainer from "./components/HeadContainer";
+import StatContainer from "./components/StatContainer";
+import AbilityContainer from "./components/AbilityContainer";
 
 function App() {
   const [team, setTeam] = useState([
@@ -13,9 +15,28 @@ function App() {
       img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
       number: 7,
       type: "Water",
-      lvl: 5,
-      hp: 20,
-      moves: ["Tackle", "Withdraw", "Water Gun"],
+      exp: 100,
+      ability: {
+        name: "Pick Up",
+        description: "May pick up items from the floor",
+      },
+      stats: {
+        hp: { current: 20, total: 20 },
+        atk: { current: 9, total: 9 },
+        def: { current: 11, total: 11 },
+        spa: { current: 10, total: 10 },
+        spd: { current: 12, total: 12 },
+        spe: { current: 9, total: 9 },
+      },
+      moves: [
+        {
+          name: "Tackle",
+          type: "normal",
+          damageType: "phys",
+          pp: { current: 5, max: 35 },
+          description: "tackles hard",
+        },
+      ],
       collapsed: true,
     },
     {
@@ -24,8 +45,15 @@ function App() {
       img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
       number: 1,
       type: "Grass",
-      lvl: 5,
-      hp: 21,
+      exp: 100,
+      stats: {
+        hp: { current: 20, total: 20 },
+        atk: { current: 9, total: 9 },
+        def: { current: 11, total: 11 },
+        spa: { current: 10, total: 10 },
+        spd: { current: 12, total: 12 },
+        spe: { current: 9, total: 9 },
+      },
       moves: ["Tackle", "Vine Whip", "Growl"],
       collapsed: true,
     },
@@ -35,9 +63,70 @@ function App() {
       img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
       number: 4,
       type: "Fire",
-      lvl: 5,
-      hp: 19,
+      exp: 100,
+      stats: {
+        hp: { current: 20, total: 20 },
+        atk: { current: 9, total: 9 },
+        def: { current: 11, total: 11 },
+        spa: { current: 10, total: 10 },
+        spd: { current: 12, total: 12 },
+        spe: { current: 9, total: 9 },
+      },
       moves: ["Scratch", "Ember", "Growl"],
+      collapsed: true,
+    },
+    {
+      name: "Caterpie",
+      uuid: uuidv4(),
+      img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
+      number: 10,
+      type: "Bug",
+      exp: 100,
+      stats: {
+        hp: { current: 20, total: 20 },
+        atk: { current: 9, total: 9 },
+        def: { current: 11, total: 11 },
+        spa: { current: 10, total: 10 },
+        spd: { current: 12, total: 12 },
+        spe: { current: 9, total: 9 },
+      },
+      moves: ["Tackle", "String Shot"],
+      collapsed: true,
+    },
+    {
+      name: "Pidgey",
+      uuid: uuidv4(),
+      img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png",
+      number: 16,
+      type: "Flying",
+      exp: 100,
+      stats: {
+        hp: { current: 20, total: 20 },
+        atk: { current: 9, total: 9 },
+        def: { current: 11, total: 11 },
+        spa: { current: 10, total: 10 },
+        spd: { current: 12, total: 12 },
+        spe: { current: 9, total: 9 },
+      },
+      moves: ["Tackle", "Gust", "Sand Attack"],
+      collapsed: true,
+    },
+    {
+      name: "Pikachu",
+      uuid: uuidv4(),
+      img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+      number: 25,
+      type: "Electric",
+      exp: 100,
+      stats: {
+        hp: { current: 20, total: 20 },
+        atk: { current: 9, total: 9 },
+        def: { current: 11, total: 11 },
+        spa: { current: 10, total: 10 },
+        spd: { current: 12, total: 12 },
+        spe: { current: 9, total: 9 },
+      },
+      moves: ["Thundershock", "Tackle", "Growl"],
       collapsed: true,
     },
   ]);
@@ -46,7 +135,7 @@ function App() {
     let temp = team.map((t) => {
       if (t.uuid === x) {
         return { ...t, collapsed: !t.collapsed };
-      } else return t;
+      } else return { ...t, collapsed: true };
     });
 
     setTeam(temp);
@@ -56,7 +145,15 @@ function App() {
       {team.map((t) => (
         <div key={t.uuid} className="card" onClick={() => collapse(t.uuid)}>
           <HeadContainer mon={t} />
-          {t.collapsed === false ? <MovesContainer moves={t.moves} /> : ""}
+          {t.collapsed === false ? (
+            <div>
+              <AbilityContainer ability={t.ability} />
+              <MovesContainer moves={t.moves} />
+              <StatContainer stats={t.stats} />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       ))}
     </div>
