@@ -69,6 +69,10 @@ function App() {
       number: "001",
       type: "grass",
       exp: 100,
+      ability: {
+        name: "Pick Up",
+        description: "May pick up items from the floor",
+      },
       stats: {
         hp: { current: 0, total: 20 },
         atk: { current: 9, total: 9 },
@@ -119,6 +123,10 @@ function App() {
       number: "004",
       type: "fire",
       exp: 100,
+      ability: {
+        name: "Pick Up",
+        description: "May pick up items from the floor",
+      },
       stats: {
         hp: { current: 20, total: 20 },
         atk: { current: 9, total: 9 },
@@ -152,6 +160,10 @@ function App() {
       uuid: uuidv4(),
       number: "010",
       type: "bug",
+      ability: {
+        name: "Pick Up",
+        description: "May pick up items from the floor",
+      },
       exp: 100,
       stats: {
         hp: { current: 20, total: 20 },
@@ -177,6 +189,10 @@ function App() {
       uuid: uuidv4(),
       number: "016",
       type: "flying",
+      ability: {
+        name: "Pick Up",
+        description: "May pick up items from the floor",
+      },
       exp: 100,
       stats: {
         hp: { current: 20, total: 20 },
@@ -219,6 +235,10 @@ function App() {
       uuid: uuidv4(),
       number: "025",
       type: "electric",
+      ability: {
+        name: "Pick Up",
+        description: "May pick up items from the floor",
+      },
       exp: 100,
       stats: {
         hp: { current: 20, total: 20 },
