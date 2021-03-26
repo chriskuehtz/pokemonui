@@ -1,10 +1,10 @@
 const AbilityContainer = ({ ability }) => {
   return (
-    <div class="pb-05">
+    <div className="pb-05">
       <h2 className="pb-05">Ability</h2>
-      <div className="card">
+      <div className="card border">
         <h3>{ability.name}</h3>
-        <p class="thin">{ability.description}</p>
+        <p className="thin">{ability.description}</p>
       </div>
     </div>
   );

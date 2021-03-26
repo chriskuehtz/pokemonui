@@ -1,15 +1,20 @@
 .head-container {
-  margin-top: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  align-items: flex-start;
+  align-items: center;
   justify-content: start;
 
   @media (min-width: $tablet) {
     grid-template-columns: 1fr;
   }
 
-  img {
+  .head-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pokemon-img {
     height: 5rem;
     width: 5rem;
 
@@ -22,5 +27,8 @@
       height: 15rem;
       width: 15rem;
     }
+  }
+  .fainted {
+    filter: grayscale(100%);
   }
 }

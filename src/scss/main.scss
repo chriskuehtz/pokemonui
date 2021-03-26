@@ -1,11 +1,11 @@
-//variables
-@import "./variables";
-//utilities
+//variables and utilities
 @import "./utilities";
 //reusable components
 @import "./reusables/card";
 @import "./reusables/card-stack";
 @import "./reusables/progress-segment";
+@import "./reusables/type-bubble";
+@import "./reusables/subline";
 //unique components
 @import "./components/moves-container";
 @import "./components/head-container";
